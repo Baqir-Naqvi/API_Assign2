@@ -44,7 +44,7 @@ function addblog()
         BlogCategory:category
     }
     $.ajax({
-        url:`http://localhost:3000/blogs/`,
+        url:`https://assign2api55.herokuapp.com/blogs/`,
         method:"POST",
         data:newblog,
          success:(blog)=>{
@@ -94,7 +94,7 @@ function updateblog()
     var content=$('#contentarea').val();
     var category=$('#categoryselect').find(":selected").text();
     $.ajax({
-        url:`http://localhost:3000/blogs/${idedit}`,
+        url:`https://assign2api55.herokuapp.com/blogs/${idedit}`,
         method:"PUT",
         data:{
             BlogTitle:title,
@@ -132,7 +132,7 @@ function getallblogs()
 {
     $("#rowbody").empty();
     $.ajax({
-        url:`http://localhost:3000/blogs/`,
+        url:`https://assign2api55.herokuapp.com/blogs/`,
         method:"GET",
         success:(blogs)=>{
             blogs.forEach(blog=>{
@@ -166,7 +166,7 @@ function deleteblog()
    var deletedid=$(this).closest(".card").attr("id");
  
       $.ajax({
-        url:`http://localhost:3000/blogs/${deletedid}`,
+        url:`https://assign2api55.herokuapp.com/blogs/${deletedid}`,
         method:"DELETE",
         success:(blog)=>{
             $(this).closest(".card").remove();
